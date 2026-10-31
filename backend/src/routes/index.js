@@ -84,7 +84,7 @@ router.patch('/jobs/:id/target', requireAuth, requireRole('student'), csrfGuard,
 router.get('/share/:shareId', publicCtrl.getSharedView);
 router.get('/public/:shareToken', requireAuth, requireRole('recruiter'), publicCtrl.getProfile);
 router.get('/public/:shareToken/summary', requireAuth, requireRole('recruiter'), publicCtrl.getSummary);
-router.post('/public/:shareToken/match', requireAuth, requireRole('recruiter'), csrfGuard, jobLimit, publicCtrl.matchJd);
+router.post('/public/:shareToken/match', optionalAuth, jobLimit, publicCtrl.matchJd);
 router.post('/public/compare', optionalAuth, jobLimit, publicCtrl.compareCandidates);
 router.get('/recruiter/opened', requireAuth, requireRole('recruiter'), publicCtrl.opened);
 router.get('/reports/:id/share/access-log', requireAuth, requireRole('student'), publicCtrl.accessLog);

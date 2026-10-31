@@ -41,12 +41,15 @@ export default function Landing() {
           </div>
         </Link>
         <nav className="hidden items-center gap-8 text-xs font-mono text-ink-3 md:flex">
-          <Link to="/student" className="hover:text-ink">Student Coach</Link>
-          <Link to="/recruiter" className="hover:text-ink">Evidence Desk</Link>
-          <Link to="/methodology" className="hover:text-ink">Methodology & Ethics</Link>
-          <Link to="/ui-kit" className="hover:text-ink">UI Kit</Link>
+          <Link to="/student" className="hover:text-ink transition">Student Coach</Link>
+          <Link to="/recruiter" className="hover:text-ink transition">Evidence Desk</Link>
+          <Link to="/methodology" className="hover:text-ink transition">Methodology & Ethics</Link>
+          <Link to="/ui-kit" className="hover:text-ink transition">UI Kit</Link>
         </nav>
         <div className="flex items-center gap-3">
+          <Link to="/login" className="hidden sm:inline-flex text-xs font-mono text-ink-2 hover:text-ink px-3 py-2 border border-rule bg-card rounded-[2px] transition">
+            Sign In
+          </Link>
           <Link to="/analyze">
             <Button variant="primary" className="text-xs">
               <span>New Intake</span>

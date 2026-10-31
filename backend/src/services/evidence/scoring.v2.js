@@ -12,7 +12,7 @@ export function scoreSkillV2(skillId, evidence = [], repos = [], externalPRs = [
 
   // 1. Separate direct code hits (dependencies, imports, languages)
   const codeHits = evidence.filter(e => ['dependency', 'import', 'language'].includes(e.kind || e.type));
-  const hasUnflaggedCodeEvidence = codeHits.some(e => !e.flagged && (e.kind === 'dependency' || e.kind === 'import'));
+  const hasUnflaggedCodeEvidence = codeHits.some(e => !e.flagged && ['dependency', 'import', 'language'].includes(e.kind || e.type));
   const isImpliedOnly = evidence.length > 0 && evidence.every(e => e.implied);
 
   // Distinct evidenced repos

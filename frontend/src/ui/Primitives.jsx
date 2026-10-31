@@ -80,34 +80,38 @@ export function FlagNote({ code, severity = 'medium', explanation, repo, classNa
   );
 }
 
-export function KeyBox({ keyValue, type = 'ANALYSIS KEY', onCopy, onDownload, className = '' }) {
+export function KeyBox({ label, value, keyValue, type, annotation, onCopy, onDownload, className = '' }) {
+  const displayType = label || type || 'ANALYSIS KEY';
+  const displayVal = value !== undefined ? value : (keyValue || '—');
   return (
-    <div className={`border border-rule bg-paper-2 p-3 rounded-[2px] font-mono ${className}`}>
+    <div className={`border border-rule bg-paper p-3.5 rounded-[2px] font-mono ${className}`}>
       <div className="flex items-center justify-between text-[10px] text-ink-3 uppercase tracking-wider mb-1">
-        <span>{type}</span>
-        <span>AUDIT SECURE</span>
+        <span>{displayType}</span>
+        <span className="text-[9px] text-forest/80 font-semibold">{annotation || 'AUDIT SECURE'}</span>
       </div>
-      <div className="bg-card border border-rule px-2.5 py-2 text-xs text-ink select-all break-all tracking-tight tabular-nums">
-        {keyValue}
+      <div className="bg-card border border-rule px-3 py-2 text-base font-bold text-ink select-all break-all tracking-tight tabular-nums mt-1">
+        {displayVal}
       </div>
-      <div className="mt-2 flex items-center justify-end gap-2 text-xs">
-        {onCopy && (
-          <button
-            onClick={onCopy}
-            className="px-2.5 py-1 border border-rule bg-card hover:bg-paper text-ink rounded-[2px] font-sans text-xs transition"
-          >
-            Copy key
-          </button>
-        )}
-        {onDownload && (
-          <button
-            onClick={onDownload}
-            className="px-2.5 py-1 border border-rule bg-card hover:bg-paper text-ink rounded-[2px] font-sans text-xs transition"
-          >
-            Download .txt
-          </button>
-        )}
-      </div>
+      {(onCopy || onDownload) && (
+        <div className="mt-2 flex items-center justify-end gap-2 text-xs">
+          {onCopy && (
+            <button
+              onClick={onCopy}
+              className="px-2.5 py-1 border border-rule bg-card hover:bg-paper text-ink rounded-[2px] font-sans text-xs transition"
+            >
+              Copy key
+            </button>
+          )}
+          {onDownload && (
+            <button
+              onClick={onDownload}
+              className="px-2.5 py-1 border border-rule bg-card hover:bg-paper text-ink rounded-[2px] font-sans text-xs transition"
+            >
+              Download .txt
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

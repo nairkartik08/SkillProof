@@ -22,44 +22,23 @@ export async function getSharedView(req, res) {
 
 
 async function sharedReport(token) {
-  const cleanToken = String(token || '').trim().replace(/\/$/, '');
-  const isObjId = mongoose.Types.ObjectId.isValid(cleanToken);
-  const query = {
-    isPublic: true,
-    legacy: false,
-    status: 'completed'
-  };
-  if (isObjId) {
-    query.$or = [{ shareId: cleanToken }, { _id: cleanToken }];
-  } else {
-    query.shareId = cleanToken;
-  }
-  const analysis = await Analysis.findOne(query);
+  const analysis = await Analysis.findOne({ shareId: token, isPublic: true, legacy: false, status: 'completed' });
   if (!analysis) throw SHARE_ERROR();
   return analysis;
 }
 
 async function recordAccess(analysis, recruiter, action) {
   if (!recruiter?._id) return;
-  try {
-    const since = new Date(Date.now() - 30 * 60 * 1000);
-    const existing = await ShareAccessLog.findOne({
+  const since = new Date(Date.now() - 30 * 60 * 1000);
+  const existing = await ShareAccessLog.findOne({ reportId: analysis._id, recruiterUserId: recruiter._id, action, openedAt: { $gte: since } });
+  if (!existing) {
+    await ShareAccessLog.create({
       reportId: analysis._id,
+      shareTokenId: analysis.shareId,
       recruiterUserId: recruiter._id,
-      action,
-      openedAt: { $gte: since }
+      recruiterOrg: recruiter.orgName || recruiter.name || 'Verified Recruiter',
+      action
     });
-    if (!existing) {
-      await ShareAccessLog.create({
-        reportId: analysis._id,
-        shareTokenId: analysis.shareId || String(analysis._id),
-        recruiterUserId: recruiter._id,
-        recruiterOrg: recruiter.orgName || recruiter.name || 'Verified Recruiter',
-        action
-      });
-    }
-  } catch (err) {
-    console.error('[RecordAccess] Non-fatal log error:', err.message);
   }
 }
 

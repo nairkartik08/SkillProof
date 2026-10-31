@@ -92,7 +92,7 @@ async function runAnalysis(analysis) {
 
     const repositories = [];
     const warnings = [...analysis.warnings];
-    if (selection.truncated) warnings.push('Only the first 200 recently pushed repositories were considered.');
+    if (selection.truncated) warnings.push('Only the recently pushed repositories fetched were considered.');
     if (!rankedRepos.length) warnings.push('No eligible non-fork, active public repositories were found. Absence of public evidence does not mean absence of skill.');
 
     // 3. Analyze Repositories with Bounded Concurrency (p-limit 4)

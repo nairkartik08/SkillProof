@@ -36,12 +36,17 @@ export async function getProfile(username) {
 }
 export async function getRepositories(username) {
   const repositories = []; let hasNext = false;
-  for (let page = 1; page <= 2; page++) {
+  let page = 1;
+  while (true) {
     const response = await githubGet(`/users/${encodeURIComponent(username)}/repos`, { per_page: 100, page, sort: 'pushed', type: 'owner' });
-    repositories.push(...response.data); hasNext = response.hasNext;
+    repositories.push(...(response.data || []));
+    hasNext = response.hasNext;
     if (!hasNext) break;
+    page++;
   }
-  return { repositories: repositories.filter(repo => !repo.fork && !repo.archived && !repo.disabled && repo.size > 0).slice(0, env.MAX_REPOSITORIES), truncated: hasNext, considered: repositories.length };
+  const eligibleRepos = repositories.filter(repo => !repo.fork && !repo.archived && !repo.disabled && repo.size > 0);
+  const selectedRepos = env.MAX_REPOSITORIES ? eligibleRepos.slice(0, env.MAX_REPOSITORIES) : eligibleRepos;
+  return { repositories: selectedRepos, truncated: hasNext, considered: repositories.length };
 }
 export async function optionalGithub(path, params, warnings, label) {
   try { return await githubGet(path, params); }

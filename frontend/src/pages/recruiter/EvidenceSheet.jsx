@@ -243,43 +243,50 @@ export default function EvidenceSheet() {
         </div>
 
         <div className="divide-y divide-rule">
-          {skills.map(s => (
-            <div key={s.id} className="py-3 flex flex-wrap items-center justify-between gap-3 hover:bg-paper/40 px-2 rounded transition">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-sans font-bold text-sm text-ink">{s.label || s.name}</span>
-                  <span className={`font-mono text-[10px] px-2 py-0.5 rounded font-bold ${
-                    s.verdict === 'Proven' ? 'bg-emerald-100 text-emerald-900' :
-                    s.verdict === 'Partial' ? 'bg-amber-100 text-amber-900' :
-                    'bg-paper text-ink-3 border border-rule'
-                  }`}>
-                    {s.verdict}
-                  </span>
-                  {s.claimed && (
-                    <span className="text-[10px] font-mono text-ink-3 border border-rule px-1 rounded">
-                      Resume Claim
+          {skills.map((s, idx) => {
+            const skillKey = s.id || s.name || s.label || `skill-${idx}`;
+            const activeKey = activeEvidenceSkill ? (activeEvidenceSkill.id || activeEvidenceSkill.name || activeEvidenceSkill.label) : null;
+            const isActive = activeKey === skillKey;
+            const evidenceItems = s.evidence && s.evidence.length > 0 ? s.evidence : (s.signals || []);
+            const hasEvidence = evidenceItems.length > 0;
+
+            return (
+              <div key={skillKey} className="py-3 flex flex-wrap items-center justify-between gap-3 hover:bg-paper/40 px-2 rounded transition">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-sans font-bold text-sm text-ink">{s.label || s.name}</span>
+                    <span className={`font-mono text-[10px] px-2 py-0.5 rounded font-bold ${
+                      (s.verdict || s.status) === 'Proven' ? 'bg-emerald-100 text-emerald-900' :
+                      (s.verdict || s.status) === 'Partial' ? 'bg-amber-100 text-amber-900' :
+                      'bg-paper text-ink-3 border border-rule'
+                    }`}>
+                      {s.verdict || s.status || 'Claimed-only'}
                     </span>
-                  )}
+                    {s.claimed && (
+                      <span className="text-[10px] font-mono text-ink-3 border border-rule px-1 rounded">
+                        Resume Claim
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="mt-1 flex flex-wrap gap-3 text-[11px] font-mono text-ink-3">
+                    <span>Score: {s.score || 0}/100</span>
+                    <span>Artifacts: {evidenceItems.length}</span>
+                    {s.repositories?.length > 0 && <span>Repos: {s.repositories.join(', ')}</span>}
+                  </div>
                 </div>
 
-                <div className="mt-1 flex flex-wrap gap-3 text-[11px] font-mono text-ink-3">
-                  <span>Score: {s.score || 0}/100</span>
-                  <span>Artifacts: {s.evidence?.length || 0}</span>
-                  {s.repositories?.length > 0 && <span>Repos: {s.repositories.join(', ')}</span>}
-                </div>
-              </div>
-
-              {s.evidence?.length > 0 && (
                 <button
-                  onClick={() => setActiveEvidenceSkill(activeEvidenceSkill?.id === s.id ? null : s)}
-                  className="text-xs font-mono text-forest hover:text-ink underline flex items-center gap-1"
+                  type="button"
+                  onClick={() => setActiveEvidenceSkill(isActive ? null : { ...s, evidence: evidenceItems, key: skillKey })}
+                  className="text-xs font-mono text-forest hover:text-ink underline flex items-center gap-1 cursor-pointer"
                 >
                   <HelpCircle size={13} />
-                  <span>{activeEvidenceSkill?.id === s.id ? 'Hide Instructions' : 'Verify Yourself'}</span>
+                  <span>{isActive ? 'Hide Instructions' : 'Verify Yourself'}</span>
                 </button>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </div>
 
