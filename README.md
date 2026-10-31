@@ -34,6 +34,138 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
 
 ---
 
+## 📸 Platform Walkthrough & Interface Preview
+
+### 1. Landing Page & Product Overview
+> *Warm editorial aesthetic built on Fraunces serif and IBM Plex typography. Introduces the deterministic verification paradigm and clear bifurcation between Student Coach and Recruiter Evidence Desk.*
+
+![SkillProof Hero](docs/screenshots/Screenshot%202026-10-31%20160939.png)
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <b>Dual-Lens Intake & Entry Points</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161022.png" alt="Dual Lens Selection" />
+    </td>
+    <td width="50%" align="center">
+      <b>Verification Lifecycle & Ethics Guardrails</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161035.png" alt="How SkillProof Works" />
+    </td>
+  </tr>
+</table>
+
+---
+
+### 2. Authentication & Access Control
+> *Role-gated JWT authentication with HTTP-only cookies, rotating hashed refresh tokens, and CSRF double-submit protection.*
+
+<p align="center">
+  <img src="docs/screenshots/Screenshot%202026-10-31%20161049.png" alt="Sign In Page" width="550" />
+</p>
+
+---
+
+### 3. Student Lab Notebook — Audit & Coach Dashboard
+> *Personalized workspace providing deterministic audit summaries, evidence distribution donuts, and anti-gaming discrepancy detections.*
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <b>Student Coach Landing</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161129.png" alt="Student Welcome" />
+    </td>
+    <td width="50%" align="center">
+      <b>Saved Analysis Dossiers</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161141.png" alt="Your Analyses" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>Candidate Overview & Proven Counts</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161241.png" alt="Candidate Overview" />
+    </td>
+    <td width="50%" align="center">
+      <b>The Evidence Picture (Score Breakdown)</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161255.png" alt="Evidence Donut Chart" />
+    </td>
+  </tr>
+</table>
+
+#### Skill Ledgers & Discrepancy Findings
+> *Direct GitHub Linguist byte counts, package manifest links, recency gaps, and unlisted positive strength discovery.*
+
+![Discrepancy Findings & Unlisted Strengths](docs/screenshots/Screenshot%202026-10-31%20161312.png)
+
+![Verified Skills Breakdown & Scores](docs/screenshots/Screenshot%202026-10-31%20161329.png)
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <b>Inspected Repositories & Sampled Commits</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161409.png" alt="Repositories Inspected" />
+    </td>
+    <td width="50%" align="center">
+      <b>Public Share Link, Badges & Ledger Export</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161428.png" alt="Share & Export Modal" />
+    </td>
+  </tr>
+</table>
+
+---
+
+### 4. Job Role Reconciliation & Micro-Task Roadmaps
+> *Map verified evidence against real Job Descriptions (JDs) to identify qualification gaps and generate deterministic micro-tasks to close them.*
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <b>Job Description Parser & Role Intake</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161619.png" alt="Job Description Intake" />
+    </td>
+    <td width="50%" align="center">
+      <b>Verified Match Coverage (83% Match)</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161632.png" alt="Role Coverage Score" />
+    </td>
+  </tr>
+</table>
+
+![Qualification Gap Micro-Tasks](docs/screenshots/Screenshot%202026-10-31%20161645.png)
+
+---
+
+### 5. Recruiter Case Desk — High-Density Evidence Ledger
+> *Dedicated cool-toned Case Desk for talent acquisition teams. Offers stateless evaluation, capability-link lookups, and strict non-ranking requirement matrices.*
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <b>Recruiter Case Desk Entry</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161815.png" alt="Recruiter Case Desk" />
+    </td>
+    <td width="50%" align="center">
+      <b>Candidate Evidence Sheet & JD Match</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161917.png" alt="Candidate Evidence Sheet" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>Verified Skills Breakdown (Recruiter Lens)</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20161952.png" alt="Recruiter Skill Breakdown" />
+    </td>
+    <td width="50%" align="center">
+      <b>Discrepancies & Self-Verification Drilldown</b><br/>
+      <img src="docs/screenshots/Screenshot%202026-10-31%20162009.png" alt="Discrepancies & Verification" />
+    </td>
+  </tr>
+</table>
+
+#### Multi-Candidate Requirement Matrix (Side-by-Side Invariant Comparison)
+> *Side-by-side comparison respecting input order without algorithmic candidate ranking, scores, or hire recommendations.*
+
+![Requirement Matrix](docs/screenshots/Screenshot%202026-10-31%20162059.png)
+
+---
+
 ## 🏛️ Architecture & Workflow
 
 ```text
