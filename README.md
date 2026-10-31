@@ -338,21 +338,6 @@ npm test --prefix backend
 
 ---
 
-## 📸 Screenshots & Demo Information
-
-### Demo Walkthrough
-1. **Landing & Authentication**: Register or sign in as a **Student** or **Recruiter**.
-2. **Analysis Creation**: Upload a PDF resume and enter a GitHub username.
-3. **Student View (`/student`)**:
-   - Inspect **Readiness Overview** and total skill counts.
-   - Click **Get Share Link** to generate a public capability URL for recruiters.
-   - Explore **Proof Roadmap**, **Resume Fixes**, and **Micro-Tasks**.
-4. **Recruiter View (`/recruiter`)**:
-   - Open a shared candidate link or paste a job description.
-   - View high-density requirement matrices and audit evidence details.
-
----
-
 ## 🔮 Limitations & Future Scope
 
 ### Current Limitations
