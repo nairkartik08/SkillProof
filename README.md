@@ -1,50 +1,74 @@
+﻿<div align="center">
+
 # SkillProof
 
-> **Auditable Developer Skill Verification Ledger**  
-> *Deterministic skill extraction from PDF resumes cross-referenced against public GitHub repository artifacts, commit history, and automated anti-gaming trust signals.*
+### Auditable Developer Skill Verification Ledger
+
+*Deterministic skill extraction from PDF resumes cross-referenced against public GitHub repository artifacts, commit history, and automated anti-gaming trust signals — with zero LLM hallucinations.*
+
+<br/>
+
+[![Live Demo](https://img.shields.io/badge/Frontend-Live%20Demo-4ade80?style=for-the-badge&logo=vercel&logoColor=white)](https://skill-proof-silk.vercel.app)
+[![API](https://img.shields.io/badge/Backend-API%20Live-3b82f6?style=for-the-badge&logo=render&logoColor=white)](https://skillproof-api-7ebf.onrender.com)
+[![GitHub](https://img.shields.io/badge/Source-GitHub-171717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nairkartik08/SkillProof)
+
+[![Node](https://img.shields.io/badge/Node.js-22.x-339933?style=flat-square&logo=nodedotjs)](https://nodejs.org)
+[![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb)](https://mongodb.com)
+[![Tailwind](https://img.shields.io/badge/Tailwind-4.x-06b6d4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
+
+</div>
 
 ---
 
-## 👥 Team & Submission Information
+## 🌐 Live Deployment
 
-### 1. Team Details
-- **Team Name**: CodePrefix
-- **Team Members**: Aman Mishra, Kartik Nair, Ramzan Khan
+| Service | URL | Platform |
+|---|---|---|
+| **Frontend App** | [skill-proof-silk.vercel.app](https://skill-proof-silk.vercel.app) | Vercel |
+| **Backend API** | [skillproof-api-7ebf.onrender.com](https://skillproof-api-7ebf.onrender.com) | Render |
+| **API Health** | [/api/health](https://skillproof-api-7ebf.onrender.com/api/health) | Render |
 
-### 2. Problem Statement
-- **Problem Statement Name**: SkillProof - Verification & Validation of Developer Skill Claims in Technical Hiring
-- **Selected Domain**: Edutech
-  
-### 3. Project Details
-- **Project Title**: SkillProof - Auditable Developer Skill Verification Ledger
-- **Short Description**: SkillProof is a deterministic skill verification platform that eliminates resume inflation and opaque AI screener hallucinations by matching PDF resume claims directly against public GitHub repository artifacts, build manifests, and commit history. It generates an auditable, score-backed evidence ledger classified as `Proven`, `Partial`, or `Claimed-only` with automated anti-gaming trust checks. The platform empowers candidates with actionable learning roadmaps while providing recruiters with tamper-evident evidence sheets and job-matching matrices.
+> **Note:** The Render backend is on a free plan and may take ~30 seconds to wake up on first request.
 
 ---
 
-## ⚡ Project Overview
+## 👥 Team & Submission
 
-Traditional technical hiring relies heavily on self-reported resume bullets or black-box AI resume screeners that frequently hallucinate inferences. **SkillProof** replaces both with a **Deterministic Verification Ledger**:
-
-- **Zero LLM Hallucinations**: 100% deterministic ontology matching and graph expansion with recency and depth decay.
-- **Concrete Artifact Evidence**: Every verified skill links to real GitHub build manifests (`package.json`, `go.mod`, `Cargo.toml`), file AST trees, and candidate commit hashes.
-- **Anti-Gaming Trust Signals**: Automated algorithms detect and penalize tutorial clones, commit dumping bursts, empty forks, and vendored code (`node_modules` committed directly).
-- **Dual Lens Design**: 
-  - **Student Lab Notebook**: Warm paper-based workspace with readiness summaries, DAG learning roadmaps, resume bullet fixes, and micro-task verification.
-  - **Recruiter Case Desk**: High-density cool steel desk for talent acquisition with candidate share verification, requirement matrices, and audit evidence sheets.
+| Field | Details |
+|---|---|
+| **Team Name** | CodePrefix |
+| **Members** | Aman Mishra · Kartik Nair · Ramzan Khan |
+| **Problem Statement** | SkillProof — Verification & Validation of Developer Skill Claims in Technical Hiring |
+| **Domain** | Edutech |
 
 ---
 
-## 📸 Platform Walkthrough & Interface Preview
+## ⚡ What is SkillProof?
 
-### 1. Landing Page & Product Overview
-> *Warm editorial aesthetic built on Fraunces serif and IBM Plex typography. Introduces the deterministic verification paradigm and clear bifurcation between Student Coach and Recruiter Evidence Desk.*
+Traditional technical hiring relies on self-reported resume bullets or black-box AI screeners that frequently hallucinate inferences. **SkillProof** replaces both with a **Deterministic Verification Ledger**:
+
+| Pillar | Description |
+|---|---|
+| 🚫 **Zero LLM Hallucinations** | 100% deterministic ontology matching with recency and depth decay |
+| 🔗 **Concrete Artifact Evidence** | Every skill links to real `package.json`, `go.mod`, file trees, and commit SHAs |
+| 🛡️ **Anti-Gaming Trust Signals** | Detects tutorial clones, commit dumps, empty forks, and vendored code |
+| 🎓 **Student Lab Notebook** | Warm paper-based workspace with readiness summaries and learning roadmaps |
+| 🗂️ **Recruiter Case Desk** | High-density evidence desk with candidate share verification and audit sheets |
+
+---
+
+## 📸 Platform Walkthrough
+
+### 1 — Landing Page & Product Overview
+> *Warm editorial aesthetic built on Fraunces serif and IBM Plex typography. Clear bifurcation between Student Coach and Recruiter Evidence Desk.*
 
 ![SkillProof Hero](docs/screenshots/Screenshot%202026-10-31%20160939.png)
 
 <table width="100%">
   <tr>
     <td width="50%" align="center">
-      <b>Dual-Lens Intake & Entry Points</b><br/>
+      <b>Dual-Lens Entry Points</b><br/>
       <img src="docs/screenshots/Screenshot%202026-10-31%20161022.png" alt="Dual Lens Selection" />
     </td>
     <td width="50%" align="center">
@@ -56,8 +80,8 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
 
 ---
 
-### 2. Authentication & Access Control
-> *Role-gated JWT authentication with HTTP-only cookies, rotating hashed refresh tokens, and CSRF double-submit protection.*
+### 2 — Authentication & Access Control
+> *Role-gated JWT auth with HTTP-only cookies, rotating hashed refresh tokens, and CSRF double-submit protection.*
 
 <p align="center">
   <img src="docs/screenshots/Screenshot%202026-10-31%20161049.png" alt="Sign In Page" width="550" />
@@ -65,8 +89,8 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
 
 ---
 
-### 3. Student Lab Notebook — Audit & Coach Dashboard
-> *Personalized workspace providing deterministic audit summaries, evidence distribution donuts, and anti-gaming discrepancy detections.*
+### 3 — Student Lab Notebook
+> *Personalized workspace with deterministic audit summaries, evidence distribution charts, and anti-gaming discrepancy detection.*
 
 <table width="100%">
   <tr>
@@ -85,14 +109,14 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
       <img src="docs/screenshots/Screenshot%202026-10-31%20161241.png" alt="Candidate Overview" />
     </td>
     <td width="50%" align="center">
-      <b>The Evidence Picture (Score Breakdown)</b><br/>
+      <b>Evidence Distribution Chart</b><br/>
       <img src="docs/screenshots/Screenshot%202026-10-31%20161255.png" alt="Evidence Donut Chart" />
     </td>
   </tr>
 </table>
 
 #### Skill Ledgers & Discrepancy Findings
-> *Direct GitHub Linguist byte counts, package manifest links, recency gaps, and unlisted positive strength discovery.*
+> *GitHub Linguist byte counts, package manifest links, recency gaps, and unlisted positive strength discovery.*
 
 ![Discrepancy Findings & Unlisted Strengths](docs/screenshots/Screenshot%202026-10-31%20161312.png)
 
@@ -105,7 +129,7 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
       <img src="docs/screenshots/Screenshot%202026-10-31%20161409.png" alt="Repositories Inspected" />
     </td>
     <td width="50%" align="center">
-      <b>Public Share Link, Badges & Ledger Export</b><br/>
+      <b>Share Link, Badges & Ledger Export</b><br/>
       <img src="docs/screenshots/Screenshot%202026-10-31%20161428.png" alt="Share & Export Modal" />
     </td>
   </tr>
@@ -113,8 +137,8 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
 
 ---
 
-### 4. Job Role Reconciliation & Micro-Task Roadmaps
-> *Map verified evidence against real Job Descriptions (JDs) to identify qualification gaps and generate deterministic micro-tasks to close them.*
+### 4 — Job Role Reconciliation & Micro-Task Roadmaps
+> *Map verified evidence against real Job Descriptions to identify qualification gaps and generate deterministic micro-tasks to close them.*
 
 <table width="100%">
   <tr>
@@ -123,7 +147,7 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
       <img src="docs/screenshots/Screenshot%202026-10-31%20161619.png" alt="Job Description Intake" />
     </td>
     <td width="50%" align="center">
-      <b>Verified Match Coverage (83% Match)</b><br/>
+      <b>Verified Match Coverage</b><br/>
       <img src="docs/screenshots/Screenshot%202026-10-31%20161632.png" alt="Role Coverage Score" />
     </td>
   </tr>
@@ -133,8 +157,8 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
 
 ---
 
-### 5. Recruiter Case Desk — High-Density Evidence Ledger
-> *Dedicated cool-toned Case Desk for talent acquisition teams. Offers stateless evaluation, capability-link lookups, and strict non-ranking requirement matrices.*
+### 5 — Recruiter Case Desk
+> *High-density, cool-toned Case Desk for talent acquisition. Stateless evaluation, capability-link lookups, and strict non-ranking requirement matrices.*
 
 <table width="100%">
   <tr>
@@ -159,14 +183,14 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
   </tr>
 </table>
 
-#### Multi-Candidate Requirement Matrix (Side-by-Side Invariant Comparison)
-> *Side-by-side comparison respecting input order without algorithmic candidate ranking, scores, or hire recommendations.*
+#### Multi-Candidate Requirement Matrix
+> *Side-by-side comparison respecting input order — no algorithmic ranking, scores, or hire recommendations.*
 
 ![Requirement Matrix](docs/screenshots/Screenshot%202026-10-31%20162059.png)
 
 ---
 
-## 🏛️ Architecture & Workflow
+## 🏛️ Architecture
 
 ```text
                                ┌────────────────────────┐
@@ -223,129 +247,125 @@ Traditional technical hiring relies heavily on self-reported resume bullets or b
 
 ---
 
-## 🔬 Scoring Methodology V2
+## 🔬 Scoring Methodology
 
-Every skill is evaluated against an objective, auditable rubric out of 100 possible points:
+Every skill is evaluated against an auditable rubric out of **100 points**:
 
 | Dimension | Max Points | Verification Criteria |
 |---|---|---|
-| **Manifest Evidence** | 20 pts | Direct dependency or devDependency declared in build manifest |
-| **Commit Attribution** | 20 pts | Commits authored by the candidate matching email/username |
-| **Recency** | 15 pts | Activity within the last 6 months (scaled decay up to 2 years) |
-| **Breadth / Complexity** | 15 pts | Discovered across multiple distinct repositories or subsystems |
-| **Time-span Depth** | 15 pts | Active commit history spanning > 12 months on repositories |
-| **Graph Implication** | 15 pts | Transitive implication from parent technologies (e.g. Next.js implies React) |
+| **Manifest Evidence** | 20 pts | Direct dependency declared in build manifest |
+| **Commit Attribution** | 20 pts | Commits authored by the candidate (email/username match) |
+| **Recency** | 15 pts | Activity within 6 months (scaled decay up to 2 years) |
+| **Breadth / Complexity** | 15 pts | Discovered across multiple distinct repositories |
+| **Time-span Depth** | 15 pts | Active commit history spanning > 12 months |
+| **Graph Implication** | 15 pts | Transitive implication from parent technologies |
 
 **Classification Verdicts:**
-- **PROVEN** (`≥ 70 pts`): Solid multi-repository or multi-file artifact trail with candidate commits.
-- **PARTIAL** (`30 - 69 pts`): Documented presence in dependencies or single commits without extended tenure.
-- **CLAIMED-ONLY** (`< 30 pts`): Listed on resume with no public repository artifact backing.
+
+| Verdict | Threshold | Meaning |
+|---|---|---|
+| ✅ **PROVEN** | ≥ 70 pts | Solid multi-repository artifact trail with candidate commits |
+| 🟡 **PARTIAL** | 30–69 pts | Documented presence without extended tenure |
+| ❌ **CLAIMED-ONLY** | < 30 pts | Listed on resume with no public repository backing |
 
 ---
 
 ## 🛡️ Anti-Gaming Trust Signals
 
-Candidate repositories are automatically screened through trust heuristics:
-
-1. **`FORK_NO_OWN_COMMITS`**: Candidate forked an active open-source project but authored 0 commits.
-2. **`TEMPLATE_OR_TUTORIAL`**: Matches known educational boilerplate names (`freecodecamp`, `react-tutorial`, `100-days-of-code`) or CRA default README text (Jaccard similarity `> 0.70`).
-3. **`SINGLE_COMMIT_DUMP`**: >90% of repository lines created in a single initial commit with no subsequent iterative history.
-4. **`COMMIT_BURST`**: Artificial bursts (>20 commits created in <24 hours before submission).
-5. **`VENDORED_CODE`**: Committed `node_modules/`, `vendor/`, or `.venv/` inflating language metrics.
-
----
-
-## 🚀 Key Features
-
-### For Candidates (Student Lab Notebook)
-- **Proof Readiness Summary**: Instant overview of claimed vs. proven vs. partial skills with custom verdict stamps.
-- **Interactive Experience Dumbbell Chart**: Visualizes claimed experience vs. verifiable commit history timeline.
-- **DAG Learning Roadmap**: Topologically sorted learning path based on prerequisite dependencies and difficulty.
-- **Resume Bullet Fix Generator**: Auto-generated bullet point improvements tailored to verified evidence.
-- **Micro-Task Verification Workspace**: Interactive micro-tasks with live GitHub commit checking to upgrade `Partial` or `Claimed` skills to `Proven`.
-
-### For Recruiters (Recruiter Case Desk)
-- **Shared Profile Verification**: Access revoked-gated candidate share profiles with strict organisation access audit logging.
-- **Requirement Matching Matrix**: Compare candidate evidence directly against job descriptions with percentage match scores and gap breakdowns.
-- **Audit Evidence Sheet**: Deep dive into manifest citations, commit SHA links, and anti-gaming flag notes.
+| Signal | Trigger |
+|---|---|
+| `FORK_NO_OWN_COMMITS` | Forked project with 0 candidate-authored commits |
+| `TEMPLATE_OR_TUTORIAL` | Matches known educational boilerplate (Jaccard > 0.70) |
+| `SINGLE_COMMIT_DUMP` | >90% of lines created in one initial commit |
+| `COMMIT_BURST` | >20 commits created in <24 hours |
+| `VENDORED_CODE` | Committed `node_modules/`, `vendor/`, or `.venv/` directories |
 
 ---
 
 ## 💻 Technology Stack
 
-- **Frontend**: React 19, Vite, React Router 7, Tailwind CSS 4, Lucide Icons, Custom Design Tokens (`Fraunces` & `IBM Plex`).
-- **Backend**: Node.js 22, Express 5, Mongoose 8, MongoDB Atlas, Multer, `pdf-parse`, Cloudinary SDK, Zod, Helmet.
-- **Authentication & Security**: HttpOnly Cookie Sessions, JWT access tokens, double-submit CSRF protection, rate-limiting, and owner-isolated queries.
-- **Test Suite**: Native Node.js Test Runner (`node --test`), 25+ integration & unit test files.
+| Layer | Technologies |
+|---|---|
+| **Frontend** | React 19, Vite, React Router 7, Tailwind CSS 4, Lucide Icons |
+| **Typography** | Fraunces (headings), IBM Plex Sans (UI), IBM Plex Mono (data) |
+| **Backend** | Node.js 22, Express 5, Mongoose 8, Zod, Helmet, Multer |
+| **Storage** | MongoDB Atlas (metadata), Cloudinary (PDF resumes) |
+| **Auth & Security** | HttpOnly Cookie JWT, rotating refresh tokens, CSRF double-submit, rate limiting |
+| **Testing** | Native Node.js Test Runner — 25+ integration & unit tests |
+| **Deployment** | Render (backend), Vercel (frontend) |
 
 ---
 
-## 📡 Dataset & API Information
-
-- **GitHub REST API v3**: Fetches repository metadata, commit histories, trees, and file contents deterministically.
-- **Ontology Dataset**: Built-in 250+ technical skills ontology mapping technologies, package names (`package.json`, `PyPI`, `Go`), file extensions, and DAG relationships.
-- **Cloudinary Storage API**: Secure authenticated PDF resume storage with metadata indexed in MongoDB Atlas.
-
----
-
-## 🏃 Setup & Installation Instructions
+## 🚀 Local Setup
 
 ### Prerequisites
 - Node.js `22.x`
-- MongoDB Atlas connection URI or local MongoDB instance
+- MongoDB Atlas URI (or local MongoDB)
+- Cloudinary account
+- GitHub personal access token (optional but recommended)
 
-### 1. Clone & Install Dependencies
+### 1. Clone & Install
 ```bash
-git clone https://github.com/RamzanKhansLab/TechForge_hackathon.git
-cd TechForge_hackathon
+git clone https://github.com/nairkartik08/SkillProof.git
+cd SkillProof
 npm run setup
 ```
 
 ### 2. Configure Environment
-Copy `.env.example` templates in both `backend` and `frontend`:
 ```bash
 cp backend/.env.example backend/.env
-cp frontend/.env.example frontend/.env
 ```
 
 Fill in `backend/.env`:
 ```env
 PORT=8000
 CLIENT_ORIGIN=http://localhost:5173
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/skillproof?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/skillproof
 GITHUB_TOKEN=ghp_your_optional_token
 CLOUDINARY_CLOUD_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_key
 CLOUDINARY_API_SECRET=your_secret
-JWT_SECRET=replace-with-a-random-32-character-minimum-secret
-REFRESH_SECRET=replace-with-a-different-random-32-character-minimum-secret
-COOKIE_SECRET=replace-with-a-random-32-character-minimum-secret
+JWT_SECRET=replace-with-32-char-minimum-secret
+REFRESH_SECRET=replace-with-a-different-32-char-secret
+COOKIE_SECRET=replace-with-a-random-32-char-secret
 COOKIE_SECURE=false
 ```
 
-### 3. Start Local Servers
+### 3. Start Both Servers
 ```bash
-# Start frontend and backend concurrently
 npm run dev
 ```
-- **Frontend App**: `http://localhost:5173`
-- **REST API**: `http://localhost:8000/api`
 
-### 4. Run Automated Test Suite
+| Service | URL |
+|---|---|
+| Frontend | http://localhost:5173 |
+| Backend API | http://localhost:8000/api |
+
+### 4. Run Tests
 ```bash
 npm test --prefix backend
 ```
 
 ---
 
+## 📡 APIs & Data Sources
+
+| Source | Purpose |
+|---|---|
+| **GitHub REST API v3** | Repository metadata, commit histories, file trees, language stats |
+| **Skill Ontology** | Built-in 250+ SKU mapping of technologies, packages, file extensions, and DAG relationships |
+| **Cloudinary Storage API** | Secure authenticated PDF resume storage |
+
+---
+
 ## 🔮 Limitations & Future Scope
 
 ### Current Limitations
-- **Public GitHub Only**: Analysis is intentionally restricted to public GitHub repositories to remain deterministic and non-intrusive.
-- **Deterministic MVP**: No private repo code execution, OCR, or LLM-based code generation.
-- **GitHub Rate Limits**: Unauthenticated GitHub API calls are capped at 60 requests/hr (resolved by supplying `GITHUB_TOKEN`).
+- **Public GitHub Only** — Analysis restricted to public repositories for determinism and privacy
+- **Deterministic MVP** — No private repo access, OCR, LLM inference, or code execution
+- **GitHub Rate Limits** — Unauthenticated: 60 req/hr; resolved by setting `GITHUB_TOKEN`
 
 ### Future Scope
-- **GitLab & Bitbucket Integration**: Expand evidence collection to other public version control platforms.
-- **Verifiable Cryptographic Proofs**: Issue W3C Verifiable Credentials (VCs) for proven skill claims.
-- **Org-Level Recruiter Teams**: Multi-tenant employer accounts with candidate comparison shortlists.
+- **GitLab & Bitbucket** — Expand evidence collection to other VCS platforms
+- **W3C Verifiable Credentials** — Issue cryptographic VCs for proven skill claims
+- **Org-Level Recruiter Teams** — Multi-tenant employer accounts with candidate shortlists
